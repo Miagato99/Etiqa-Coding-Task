@@ -1,13 +1,74 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.repo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repo-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.repo-item h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.repo-item p {
+    margin: 0 0 10px;
+    font-size: 1em;
+}
+
+.repo-item .owner {
+    display: flex;
+    align-items: center;
+}
+
+.repo-item .owner img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .repo-item h2 {
+        font-size: 1.2em;
+    }
+
+    .repo-item p {
+        font-size: 0.9em;
+    }
 }
