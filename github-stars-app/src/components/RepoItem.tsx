@@ -1,28 +1,32 @@
 import React, { FC } from "react";
+import { Repository } from "../types";
+import { formatStarCount, formatRepoDescription } from "../utils/formatters";
 
 interface RepoItemProps {
-  name: string;
-  description: string;
-  stars: number;
-  owner: {
-    username: string;
-    avatarUrl: string;
-  };
+  repo: Repository;
 }
 
-const RepoItem: FC<RepoItemProps> = ({ name, description, stars, owner }) => {
+const RepoItem: FC<RepoItemProps> = ({ repo }) => {
   return (
     <div className="repo-item">
       <img
-        src={owner.avatarUrl}
-        alt={`${owner.username}'s avatar`}
+        src={repo.owner.avatar_url}
+        alt={`${repo.owner.login}'s avatar`}
         className="repo-avatar"
       />
       <div className="repo-details">
-        <h2 className="repo-name">{name}</h2>
-        <p className="repo-description">{description}</p>
-        <p className="repo-stars">⭐ {stars}</p>
-        <p className="repo-owner">By: {owner.username}</p>
+        <h2 className="repo-name">{repo.name}</h2>
+        <p className="repo-description">{formatRepoDescription(repo.description)}</p>
+        <p className="repo-stars">⭐ {formatStarCount(repo.stargazers_count)}</p>
+        <p className="repo-owner">By:{repo.owner.login}</p>
+        <a
+         href={repo.html_url}
+         target="_blank"
+         rel="noopener noreferrer"
+         className="repo-link">
+          View on GitHub
+
+        </a>
       </div>
     </div>
   );

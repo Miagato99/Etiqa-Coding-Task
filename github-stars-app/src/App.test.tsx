@@ -2,8 +2,19 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+// Mock the hooks and components
+jest.mock('./hooks/useGitHubRepos', () => ({
+  __esModule: true,
+  default: () => ({
+    repos: [],
+    loading: false,
+    error: null,
+    loadMore: jest.fn()
+  })
+}));
+
+test('renders app title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/Most Starred GitHub Repositories/i);
+  expect(titleElement).toBeInTheDocument();
 });

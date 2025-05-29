@@ -11,6 +11,12 @@ body {
     padding: 20px;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #24292e;
+}
+
 .repo-list {
     list-style-type: none;
     padding: 0;
@@ -19,56 +25,110 @@ body {
 .repo-item {
     background: white;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
 }
 
-.repo-item h2 {
+.repo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.repo-avatar {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border: 2px solid #f1f1f1;
+}
+
+.repo-details {
+    flex: 1;
+}
+
+.repo-name {
     margin: 0 0 10px;
     font-size: 1.5em;
+    color: #0366d6;
 }
 
-.repo-item p {
+.repo-description {
     margin: 0 0 10px;
     font-size: 1em;
+    color: #586069;
+    line-height: 1.5;
 }
 
-.repo-item .owner {
-    display: flex;
-    align-items: center;
+.repo-stars {
+    font-weight: bold;
+    color: #e3b341;
+    margin: 10px 0;
 }
 
-.repo-item .owner img {
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+.repo-owner {
+    color: #586069;
+    margin: 5px 0;
 }
 
-.loading {
+.repo-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0366d6;
+    text-decoration: none;
+    border: 1px solid #0366d6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.repo-link:hover {
+    background-color: #0366d6;
+    color: white;
+}
+
+.loading-indicator {
     text-align: center;
+    padding: 20px;
     font-size: 1.2em;
+    color: #586069;
 }
 
-.error {
-    color: red;
+.error-message {
+    color: #cb2431;
     text-align: center;
+    padding: 20px;
     font-size: 1.2em;
+    background-color: #ffdce0;
+    border-radius: 4px;
+    margin: 20px 0;
 }
 
 @media (max-width: 600px) {
     .container {
         padding: 10px;
     }
-
-    .repo-item h2 {
+    
+    .repo-item {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .repo-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+        align-self: center;
+    }
+    
+    .repo-name {
         font-size: 1.2em;
     }
-
-    .repo-item p {
+    
+    .repo-description {
         font-size: 0.9em;
     }
 }
