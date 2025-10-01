@@ -1,5 +1,64 @@
 # GitHub Stars Explorer
-A responsive React TypeScript application that displays the most starred GitHub repositories created in the last 10 days. Built with modern React patterns including custom hooks, TypeScript interfaces, and infinite scroll functionality.
+A responsive React TypeScript application that displays the most starred GitHub repositories created in the last 10 days. Built with modern React ## 🚀 Deployment on Netlify
+
+### Overview
+This app is deployed on Netlify with continuous deployment from GitHub. You can view the live site at: [GitHub Stars Explorer](https://guileless-churros-2e6924.netlify.app)
+
+### Deployment Configuration
+The deployment is configured using [netlify.toml](github-stars-app/netlify.toml) in the project root:
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+### Deployment Steps
+
+1. **Connect to Netlify**
+   - Create a Netlify account at [netlify.com](https://www.netlify.com)
+   - Click "New site from Git"
+   - Choose GitHub as your Git provider
+   - Select the repository
+
+2. **Configure Build Settings**
+   - Build command: `npm run build`
+   - Publish directory: `build`
+   - No environment variables required for basic setup
+
+3. **Deploy**
+   - Netlify automatically deploys when you push to the main branch
+   - Each pull request gets a preview deployment
+
+### Features
+- **Continuous Deployment**: Automatic builds on every push
+- **HTTPS**: Free SSL certificate provided by Netlify
+- **Preview Deployments**: Every pull request gets a unique preview URL
+- **Custom Domain**: Easy setup for custom domains through Netlify dashboard
+
+### Monitoring
+- View deploy logs in Netlify dashboard
+- Monitor site performance and uptime
+- Access analytics and form submissions
+
+### Troubleshooting Deployments
+If the build fails:
+1. Check the build logs in Netlify dashboard
+2. Ensure all dependencies are in `package.json`
+3. Verify the build command works locally
+4. Check if the publish directory contains the built files
+
+## 🚀 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)ns including custom hooks, TypeScript interfaces, and infinite scroll functionality.
 
 ## 🌟 Features
 - **Real-time Data**: Fetches the most starred GitHub repositories from the last 10 days
