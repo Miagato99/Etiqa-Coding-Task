@@ -203,7 +203,8 @@ The deployment is configured using [netlify.toml](github-stars-app/netlify.toml)
 
 3. **Deploy**
    - Netlify automatically deploys when you push to the main branch
-   - Each pull request gets a preview deployment
+   - Each pull request gets a preview deployment.
+   - Here is the deployment link: guileless-churros-2e6924.netlify.app
 
 ### Features
 - **Continuous Deployment**: Automatic builds on every push
