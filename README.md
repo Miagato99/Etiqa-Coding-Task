@@ -231,7 +231,7 @@ npm test -- --watch
 ## 🚀 Deployment on Netlify
 
 ### Overview
-This app is deployed on Netlify with continuous deployment from GitHub. You can view the live site at: [GitHub Stars Explorer](https://github-stars-explorer.netlify.app)
+This app is deployed on Netlify with continuous deployment from GitHub. You can view the live site at: [GitHub Stars Explorer](https://guileless-churros-2e6924.netlify.app)
 
 ### Deployment Configuration
 The deployment is configured using [netlify.toml](github-stars-app/netlify.toml) in the project root:
