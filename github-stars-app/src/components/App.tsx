@@ -1,12 +1,18 @@
 import React from "react";
 import RepoList from "./RepoList";
+import Header from "./Header";
+import ErrorBoundary from "./ErrorBoundary";
 
 const App: React.FC = () => {
   return (
-    <div className="container">
-      <h1>Trending Repos (The Last 10 Days)</h1>
-      <RepoList />
-    </div>
+    <ErrorBoundary>
+      <div className="container">
+        <Header />
+        <main>
+          <RepoList />
+        </main>
+      </div>
+    </ErrorBoundary>
   );
 };
 
